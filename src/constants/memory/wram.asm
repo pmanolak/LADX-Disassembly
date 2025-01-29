@@ -1505,8 +1505,9 @@ wEggMazeProgress::
 wDialogSFX::
     ds 1 ; C5AB
 
-; Unlabeled
-wC5AC::
+; Seems to be a counter for timing NOISE_SFX_BOOMERANG
+; Values: $00-$1A
+wBoomerangSFXCounter::
   ds 1 ; C5AC
 
 ; Unlabeled
