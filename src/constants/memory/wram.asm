@@ -2326,6 +2326,7 @@ wD229::
 ; Audio section
 ;
 
+section "WRAM Audio section", wramx[$D300], bank[1] ; from D300 to D3FF
 wAudioSection:: ; The audio section is from D300 to D3FF
 
 ; Note transpose value applied to all channels. Should be multiple of 2.
@@ -2825,7 +2826,11 @@ wD3E8::
 
 ; Unlabeled
 wD3E9::
-  ds 24 ; D3E9 - D400
+  ds 23 ; D3E9 - D3FF
+
+; Next WRAM is after the music section
+section "WRAM_D400", wramx[$D400], bank[1]
+ ds 1
 
 ; Room warps
 ; Each room can have 4 warp points. The room warps destination are defined below,
