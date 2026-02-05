@@ -1,3 +1,6 @@
+; The `notelen` macro indexes into MusicSpeedData_* tables, which give a note
+; length in frames.
+
 ; Minigame
 MusicSpeedData_1b_4aaa::
     db   $02, $04, $08, $10, $20, $40, $0c, $18, $30, $02, $05, $03, $01, $01, $60
@@ -293,6 +296,8 @@ ChannelDefinition_1b_4c3f:: ; Totaka's song
     set_envelope_duty $61, $00, 2, 0
     notelen 4
     rest
+
+    ; Percussion
     enable_unknown2
     notelen 12
     rest
@@ -304,6 +309,8 @@ ChannelDefinition_1b_4c3f:: ; Totaka's song
     notelen 10
     note A_2
     disable_unknown2
+
+    ; Melody
     notelen 12
     note C_3
     notelen 13

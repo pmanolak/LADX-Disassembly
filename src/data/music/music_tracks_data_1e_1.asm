@@ -1,3 +1,6 @@
+; The `notelen` macro indexes into MusicSpeedData_* tables, which give a note
+; length in frames.
+
 ; Boss, FinalBoss, EagleBossTransition, InstrumentSurfHarp
 MusicSpeedData_1e_4a9d::
     db   $01, $03, $06, $0c, $18, $30, $09, $12, $24, $02, $04, $08, $01, $01, $48
