@@ -875,6 +875,7 @@ ChannelDefinition_1b_53a5:: ; melody
     note G_4
     notelen 7
     note A_4
+
     notelen 1
     note B_4
     note C_5
@@ -885,6 +886,7 @@ ChannelDefinition_1b_53a5:: ; melody
     note G_4
     notelen 7
     note A_4
+
     notelen 1
     note B_4
     note C_5
@@ -893,6 +895,7 @@ ChannelDefinition_1b_53a5:: ; melody
     note D_5
     notelen 7
     note A_5
+
     notelen 2
     note G_5
     note A_5
@@ -904,10 +907,11 @@ ChannelDefinition_1b_53a5:: ; melody
     notelen 3
     note A_4
     set_envelope_duty $42, $00, 2, 0
-    note F#4
+    note F#4 ; using the melody channel for accompaniment, for this one note
     set_envelope_duty $56, $00, 2, 0
     notelen 1
     rest
+
     note B_4
     note C_5
     note D_5
@@ -916,6 +920,7 @@ ChannelDefinition_1b_53a5:: ; melody
     note G_4
     notelen 7
     note F#4
+
     notelen 1
     note A_4
     note E_5
@@ -926,6 +931,7 @@ ChannelDefinition_1b_53a5:: ; melody
     note F#4
     notelen 7
     note G_4
+
     notelen 1
     note G_4
     note F#4
