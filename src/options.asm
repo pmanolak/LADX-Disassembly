@@ -17,7 +17,7 @@
 ; - Dialogue debugger  (Marin will become a text-debugging object if your name begins with one space)
 ; - Jump to credits    (Marin will trigger the ending if your name begins with two spaces)
 
-;ENABLE_DEBUG_1 EQU 1
+;DEF ENABLE_DEBUG_1 = 1
 
 
 ;
@@ -30,7 +30,7 @@
 ; - Dungeon minimap entrance arrows aren't drawn.
 ; - Ending scene skipping (Left / Right during credits will move between scenes, Up / Down restarts)
 
-;ENABLE_DEBUG_2 EQU 1
+;DEF ENABLE_DEBUG_2 = 1
 
 
 ;
@@ -42,7 +42,7 @@
 ; - Full photo album     (View the photo album to get all 12 images)
 ; - Jump to ending       (Push Start on the map screen)
 
-;ENABLE_DEBUG_3 EQU 1
+;DEF ENABLE_DEBUG_3 = 1
 
 IF(!DEF(VERSION))
 DEF VERSION EQUS "0"
@@ -159,7 +159,7 @@ DEF CREDITS_VAR_2 = $0F
 
 
 
-IF !STRCMP("{LANG}", "JP")
+IF (#LANG === "JP")
 DEF LANG_JP = TRUE
 DEF FILE_28 = $14
 DEF FILE_6C = $6C
@@ -196,7 +196,7 @@ DEF __PATCH_4__ = TRUE
 DEF __RECALCULATE_MAX_HEARTS__ = TRUE
 ENDC
 
-ELIF !STRCMP("{LANG}", "EN")
+ELIF (#LANG === "EN")
 DEF LANG_EN = TRUE
 DEF FILE_28 = $28
 DEF FILE_6C = $6C
@@ -218,7 +218,7 @@ DEF __PATCH_4__ = TRUE
 DEF __RECALCULATE_MAX_HEARTS__ = TRUE
 ENDC
 
-ELIF !STRCMP("{LANG}", "FR")
+ELIF (#LANG === "FR")
 DEF LANG_FR = TRUE
 DEF FILE_28 = $1E
 DEF FILE_6C = $6D
@@ -246,7 +246,7 @@ ENDC
 DEF __SKIP_DIALOG_SUPPORT__ = TRUE
 DEF __WEAK_GENIE__ = TRUE
 
-ELIF !STRCMP("{LANG}", "DE")
+ELIF (#LANG === "DE")
 DEF LANG_DE = TRUE
 DEF FILE_28 = $1E
 DEF FILE_6C = $66

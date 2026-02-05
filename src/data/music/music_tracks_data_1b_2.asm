@@ -866,13 +866,15 @@ ChannelDefinition_1b_5343:: ; Accompaniment
     notelen 4; 8 beats
     note D_3
     note C_3
+
+    ; 16 long beats. Because we've swapped MusicSpeedData, 1 beat is 10 frames instead of 9 frames.
     set_speed MusicSpeedData_1b_4b04
-    notelen 4; ??? beats
+    notelen 4; 8 long beats
     note B_2
-    notelen 7; ??? beats
+    notelen 7; 6 long beats
     note A_2
     set_envelope_duty $52, $00, 2, 0
-    notelen 2; 2 beats
+    notelen 2; 2 long beats
     note D_3
     set_speed MusicSpeedData_1b_4af5
     end_def
@@ -880,16 +882,19 @@ ChannelDefinition_1b_5343:: ; Accompaniment
 ; Case study! This song uses MusicSpeedData_1b_4af5, stored in
 ; music_tracks_data_1b_1.asm.
 ;
-; `notelen *` is an index into that table. It gets durations in frames.
+; `notelen *` is an index into that table. It gets note durations in frames.
+; The Mabe Village theme uses notelens 1, 2, 3, 4, and 7, which yield frame
+; durations 9, 18, 36, 72, and 54.
 ;
 ; To make it easier to think about, we can convert those frame values to
-; musical "beats" by finding their greatest common factor.
+; musical "beats" by dividing by their greatest common factor. In this case,
+; that's 9 frames per 1 beat.
 ;
 ;     MusicSpeedData_1b_4af5::
-;     ; notelen       1    2    3    4              7
+;     ; notelen:      1    2    3    4              7
 ;         db   $04, $09, $12, $24, $48, $90, $1b, $36, $6c, $05, $0c, $18, $18, $06, $d8
-;     ; decimal       9   18   36   72             54
-;     ; beats         1    2    4    8              6
+;     ; Decimal:      9   18   36   72             54
+;     ; Beats:        1    2    4    8              6
 
 ChannelDefinition_1b_53a5:: ; Melody
     set_envelope_duty $56, $00, 2, 0
@@ -976,14 +981,16 @@ ChannelDefinition_1b_53a5:: ; Melody
     note G_4
     note D#4
 
-    ; 16? beats
+    ; 16 beats
     begin_loop $04
         note D_4
         note D_5
     next_loop
+
+    ; 16 long beats. Because we've swapped MusicSpeedData, 1 beat is 10 frames instead of 9.
     set_speed MusicSpeedData_1b_4b04
     begin_loop $04
-        notelen 2; ??? beats
+        notelen 2; 2 long beats
         note D_5
         note D_6
     next_loop

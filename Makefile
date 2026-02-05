@@ -13,13 +13,20 @@ rwildcard = $(foreach d,$(wildcard $(1:=/*)),$(call rwildcard,$d,$2) $(filter $(
 RGBDS   :=
 
 2BPP    := $(RGBDS)rgbgfx
+2BFLAGS := \
+  --colors dmg \
+  -Weverything
 
 ASM     := $(RGBDS)rgbasm
 ASFLAGS := \
-  --export-all
+  --export-all \
+  -Weverything \
+  -Wtruncation=1
 
 LD      := $(RGBDS)rgblink
-LDFLAGS :=
+LDFLAGS := \
+  -Weverything \
+  -Wtruncation=1
 
 FX      := $(RGBDS)rgbfix
 FXFLAGS := \
@@ -30,7 +37,8 @@ FXFLAGS := \
   --new-licensee "01" \
   --mbc-type 0x1B \
   --pad-value 0xFF \
-  --validate
+  --validate \
+  -Weverything
 
 # Default target: build and test only the US 1.0 revision.
 # (Use `make all` to build and test all targets.)
@@ -54,10 +62,9 @@ oam_%.2bpp: oam_%.png
 	tools/gfx/gfx.py --invert --interleave --out $@ 2bpp $<
 
 # Compile a PNG file to a 2BPP file, without any special conversion.
-# (This typically uses `rgbgfx`, which is much faster than the
-# Python-based `gfx.py`.)
+# (This uses `rgbgfx`, which is much faster than `tools/gfx/gfx.py`.)
 %.2bpp: %.png
-	$(2BPP) -o $@ $<
+	$(2BPP) $(2BFLAGS) -o $@ $<
 
 # Compile all dependencies (ASM, 2BPP) into an single object file.
 # (This means all the source code is always fully recompiled: for now,
