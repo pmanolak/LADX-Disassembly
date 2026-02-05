@@ -1,21 +1,30 @@
+; Minigame
 MusicSpeedData_1b_4aaa::
     db   $02, $04, $08, $10, $20, $40, $0c, $18, $30, $02, $05, $03, $01, $01, $60
 
+; ObtainItem, ChristineHouse, BowwowKidnapped, ObtainSword, Ulrira, TarinBees,
+; TurtleRockEntranceBoss, ObtainItemUnused, MoblinHideout
 MusicSpeedData_1b_4ab9::
     db   $03, $05, $0a, $14, $28, $50, $0f, $1e, $3c, $02, $08, $10, $02, $01, $78
 
+; OverworldIntro, TarinBees, Ending
 MusicSpeedData_1b_4ac8::
     db   $03, $06, $0c, $18, $30, $60, $12, $24, $48, $03, $08, $10, $02, $04, $90
 
+; IslandDisappear, Ending
 MusicSpeedData_1b_4ad7::
     db   $03, $07, $0e, $1c, $38, $70, $15, $2a, $54, $04, $09, $12, $02, $01, $a8
 
+; FileSelectTotaka, TotakaUnused, GameOver, InsideBuilding, MrWriteHouse,
+; Ending
 MusicSpeedData_1b_4ae6::
     db   $04, $08, $10, $20, $40, $80, $18, $30, $60, $04, $02, $01, $01, $00, $c0
 
+; RichardHouse, MabeVillage, FishermanUnderBridge, Ending
 MusicSpeedData_1b_4af5::
     db   $04, $09, $12, $24, $48, $90, $1b, $36, $6c, $05, $0c, $18, $18, $06, $d8
 
+; MabeVillage, Shop, MysteriousForest, AnimalVillage
 MusicSpeedData_1b_4b04::
     db   $05, $0a, $14, $28, $50, $a0, $1e, $3c, $78, $05, $01, $01, $01, $01, $f0
 
